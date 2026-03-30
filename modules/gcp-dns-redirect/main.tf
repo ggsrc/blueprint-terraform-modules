@@ -3,11 +3,6 @@ resource "google_storage_bucket" "redirect_bucket" {
   name                        = var.bucket_name
   location                    = var.bucket_location
   uniform_bucket_level_access = true
-
-  website {
-    main_page_suffix = ""
-    not_found_page   = ""
-  }
 }
 
 resource "google_compute_backend_bucket" "redirect_backend" {
